@@ -1,0 +1,24 @@
+{
+  "code": 0,
+  "msg": "数据获取成功",
+  "data": {
+    "bookList": [
+      {
+        "id": 445,
+        "fileName": "2018_Book_Model-BasedDemography",
+        "cover": "http://47.99.166.157/book/res/img/SocialSciences/2018_Book_Model-BasedDemography.jpeg",
+        "title": "Model-Based Demography",
+        "author": "Thomas K. Burch",
+        "publisher": "Springer International Publishing, Cham",
+        "bookId": "2018_Book_Model-BasedDemography",
+        "category": 2,
+        "categoryText": "SocialSciences",
+        "language": "en",
+        "selected": false,
+        "private": false,
+        "cache": false,
+        "haveRead": 0
+      }
+    ]
+  }
+}
