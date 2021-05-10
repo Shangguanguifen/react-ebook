@@ -1,0 +1,663 @@
+/*
+ * @Author: Guifen Shangguan 
+ * @Date: 2021-04-23 11:49:39 
+ * @Last Modified by: Guifen Shangguan
+ * @Last Modified time: 2021-04-29 21:16:19
+ */
+@import '../../assets/styles/global.scss';
+
+.ebook-reader {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  .ebook-reader-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 150;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+//ebookHeader
+.ebook-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: px2rem(48);
+  padding: 0 px2rem(15);
+  box-sizing: border-box;
+  overflow: hidden;
+  @include left;
+  .ebook-header-text {
+    font-size: px2rem(12);
+    color: #6d7178;
+  }
+}
+
+//ebookFooter
+.ebook-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: px2rem(48);
+  padding: 0 px2rem(15);
+  box-sizing: border-box;
+  @include right;
+  .ebook-footer-text {
+    font-size: px2rem(12);
+    color: #6d7178;
+  }
+}
+
+// title
+.title-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 210;
+  display: flex;
+  width: 100%;
+  height: px2rem(48);
+  background: white;
+  box-shadow: 0 px2rem(8) px2rem(8) rgba(0, 0, 0, .15);
+  font-size: px2rem(20);
+  .left {
+    flex: 0 0 px2rem(60);
+    @include left;
+    margin-left: px2rem(15);
+  }
+  .right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    .icon-wrapper {
+      flex: 0 0 px2rem(40);
+      @include center;
+      .icon-shelf {
+        font-size: px2rem(22);
+      }
+      .icon-cart {
+        font-size: px2rem(22);
+      }
+    }
+  }
+}
+
+// menu
+.menu-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  display: flex;
+  width: 100%;
+  height: px2rem(48);
+  background: white;
+  box-shadow: 0 px2rem(-8) px2rem(8) rgba(0, 0, 0, .15);
+  font-size: px2rem(20);
+  &.hide-box-shadow {
+    box-shadow: none;
+  }
+  .icon-wrapper {
+    flex: 1;
+    @include center;
+    .icon-progress {
+      font-size: px2rem(24);
+    }
+    .icon-bright {
+      font-size: px2rem(22);
+    }
+  }
+}
+
+// settingFont
+.setting-wrapper {
+  position: absolute;
+  bottom: px2rem(48);
+  left: 0;
+  z-index: 160;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: px2rem(90);
+  background: white;
+  box-shadow: 0 px2rem(-8) px2rem(8) rgba(0, 0, 0, .15);
+  .setting-font-size {
+    flex: 2;
+    display: flex;
+    height: 100%;
+    .preview {
+      flex: 0 0 px2rem(40);
+      @include center;
+    }
+    .select {
+      display: flex;
+      flex: 1;
+      .select-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        &:first-child {
+          .line {
+            &:first-child {
+              border-top: none;
+            }
+          }
+        }
+        &:last-child {
+          .line {
+            &:last-child {
+              border-top: none;
+            }
+          }
+        }
+        .line {
+          flex: 1;
+          height: 0;
+          border-top: px2rem(1) solid #ccc;
+        }
+        .point-wrapper {
+          position: relative;
+          flex: 0 0 0;
+          width: 0;
+          height: px2rem(7);
+          border-left: px2rem(1) solid #ccc;
+          .point {
+            position: absolute;
+            top: px2rem(-8);
+            left: px2rem(-10);
+            width: px2rem(20);
+            height: px2rem(20);
+            border-radius: 50%;
+            background: white;
+            border: px2rem(1) solid #ccc;
+            box-shadow: 0 px2rem(4) px2rem(4) rgba(0, 0, 0, .15);
+            @include center;
+            .small-point {
+              width: px2rem(5);
+              height: px2rem(5);
+              background: black;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .setting-font-family {
+    flex: 1;
+    font-size: px2rem(14);
+    @include center;
+    .setting-font-family-text-wrapper {
+      @include center;
+    }
+    .setting-font-family-icon-wrapper {
+      @include center;
+    }
+  }
+}
+
+// settingFontPopup
+.ebook-popup-list {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 300;
+  width: 100%;
+  background: white;
+  box-shadow: 0 px2rem(-4) px2rem(6) rgba(0, 0, 0, .1);
+  .ebook-popup-title {
+    position: relative;
+    padding: px2rem(15);
+    box-sizing: border-box;
+    border-bottom: px2rem(1) solid #b8b9bb;
+    text-align: center;
+    @include center;
+    .ebook-popup-title-icon {
+      position: absolute;
+      left: px2rem(15);
+      top: 0;
+      height: 100%;
+      font-size: px2rem(16);
+      font-weight: bold;
+      @include center;
+    }
+    .ebook-popup-title-text {
+      font-size: px2rem(14);
+      font-weight: bold;
+    }
+  }
+  .ebook-popup-list-wrapper {
+    .ebook-popup-item {
+      display: flex;
+      padding: px2rem(15);
+      .ebook-popup-item-text {
+        flex: 1;
+        font-size: px2rem(14);
+        text-align: left;
+        &.selected {
+          color: #346cb9;
+          font-weight: bold;
+        }
+      }
+      .ebook-popup-item-check {
+        flex: 1;
+        text-align: right;
+        font-size: px2rem(14);
+        font-weight: bold;
+        color: #346cb9;
+      }
+    }
+  }
+}
+
+//settingTheme
+.setting-theme {
+  height: 100%;
+  display: flex;
+  .setting-theme-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: px2rem(5);
+    box-sizing: border-box;
+    .preview {
+      flex: 1;
+      border: px2rem(1) solid #ccc;
+      box-sizing: border-box;
+      margin-bottom: px2rem(4);
+      &.selected {
+        box-shadow: 0 px2rem(6) px2rem(8) 0 rgba(0, 0, 0, 0.3);
+      }
+    }
+    .text {
+      flex: 0 0 px2rem(20);
+      font-size: px2rem(14);
+      color: #ccc;
+      @include center;
+      &.selected {
+        color: #333;
+      }
+    }
+  }
+}
+
+// settingProgress
+.setting-progress {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .read-time-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: px2rem(40);
+    font-size: px2rem(12);
+    @include center;
+  }
+  .progress-wrapper {
+    width: 100%;
+    height: 100%;
+    @include center;
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    .progress-icon-wrapper {
+      font-size: px2rem(20);
+    }
+    .progress {
+      width: 100%;
+      -webkit-appearance: none;
+      height: px2rem(2);
+      margin: 0 px2rem(10);
+      &:focus {
+        outline: none;
+      }
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: px2rem(20);
+        width: px2rem(20);
+        border-radius: 50%;
+        background: white;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, .15);
+        border: px2rem(1) solid #ddd;
+      }
+    }
+  }
+  .text-wrapper {
+    position: absolute;
+    left: 0;
+    bottom: px2rem(10);
+    width: 100%;
+    color: #333;
+    font-size: px2rem(12);
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    @include center;
+    .progress-section-text {
+      @include ellipsis;
+    }
+    .progress-text {
+      margin-left: px2rem(6);
+    }
+  }
+}
+
+// settingMenu
+.slide-content-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 350;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .content {
+    flex: 0 0 85%;
+    width: 85%;
+    height: 100%;
+    box-sizing: border-box;
+    .content-page-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      .content-page {
+        flex: 1;
+        width: 100%;
+        overflow: hidden;
+      }
+      .content-page-tab {
+        display: flex;
+        flex: 0 0 px2rem(48);
+        width: 100%;
+        .content-page-tab-item {
+          flex: 1;
+          font-size: px2rem(12);
+          @include center;
+        }
+      }
+    }
+    .empty {
+      width: 100%;
+      height: 100%;
+      @include center;
+      font-size: px2rem(16);
+      color: #333;
+    }
+  }
+  .content-bg {
+    flex: 0 0 15%;
+    // margin-left: 15%;
+    width: 15%;
+    height: 100%;
+  }
+}
+
+//ebookSlideContent
+.ebook-slide-contents {
+  width: 100%;
+  font-size: 0;
+  .slide-contents-search-wrapper {
+    display: flex;
+    width: 100%;
+    height: px2rem(36);
+    margin: px2rem(20) 0 px2rem(10) 0;
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    .slide-contents-search-input-wrapper {
+      flex: 1;
+      @include center;
+      .slide-contents-search-icon {
+        flex: 0 0 px2rem(28);
+        font-size: px2rem(12);
+        @include center;
+      }
+      .slide-contents-search-input {
+        flex: 1;
+        width: 100%;
+        height: px2rem(32);
+        font-size: px2rem(14);
+        background: transparent;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+    .slide-contents-search-cancel {
+      flex: 0 0 px2rem(50);
+      font-size: px2rem(14);
+      @include right;
+    }
+  }
+  .slide-contents-book-wrapper {
+    display: flex;
+    width: 100%;
+    height: px2rem(90);
+    padding: px2rem(10) px2rem(15) px2rem(20) px2rem(15);
+    box-sizing: border-box;
+    .slide-contents-book-img-wrapper {
+      flex: 0 0 px2rem(45);
+      .slide-contents-book-img {
+        width: px2rem(45);
+        height: px2rem(60);
+      }
+    }
+    .slide-contents-book-info-wrapper {
+      flex: 1;
+      padding: 0 px2rem(10);
+      box-sizing: border-box;
+      .slide-contents-book-title {
+        // width: px2rem(153.75);
+        font-size: px2rem(14);
+        line-height: px2rem(16);
+        @include left;
+        .slide-contents-book-title-text {
+          @include ellipsis2(3);
+        }
+      }
+      .slide-contents-book-author {
+        // width: px2rem(153.75);
+        font-size: px2rem(12);
+        line-height: px2rem(14);
+        margin-top: px2rem(5);
+        @include left;
+        .slide-contents-book-author-text {
+          @include ellipsis2(1);
+        }
+      }
+    }
+    .slide-contents-book-progress-wrapper {
+      flex: 0 0 px2rem(70);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      .slide-contents-book-progress {
+        .progress {
+          font-size: px2rem(14);
+        }
+        .progress-text {
+          font-size: px2rem(12);
+        }
+      }
+      .slide-contents-book-time {
+        font-size: px2rem(12);
+        margin-top: px2rem(5);
+      }
+    }
+  }
+  .slide-contents-list {
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    .slide-contents-item {
+      display: flex;
+      padding: px2rem(20) 0;
+      box-sizing: border-box;
+      .slide-contents-item-label {
+        flex: 1;
+        font-size: px2rem(14);
+        line-height: px2rem(16);
+        @include ellipsis2(1);
+      }
+      .slide-contents-item-page {
+        flex: 0 0 px2rem(30);
+        font-size: px2rem(10);
+        @include right;
+      }
+    }
+  }
+  .slide-search-list {
+    width: 100%;
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    .slide-search-item {
+      font-size: px2rem(14);
+      line-height: px2rem(16);
+      padding: px2rem(20) 0;
+      box-sizing: border-box;
+    }
+  }
+}
+
+//ebookSlideBookmark
+.ebook-slide-bookmark {
+  width: 100%;
+  .slide-bookmark-title {
+    width: 100%;
+    height: px2rem(48);
+    font-size: px2rem(14);
+    font-weight: bold;
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    @include left;
+  }
+  .slide-bookmark-list {
+    padding: 0 px2rem(15);
+    box-sizing: border-box;
+    .slide-bookmark-item {
+      display: flex;
+      padding: px2rem(15) 0;
+      box-sizing: border-box;
+      .slide-bookmark-item-icon {
+        flex: 0 0 px2rem(29);
+        @include left;
+        .icon-bookmark {
+          width: px2rem(20);
+          height: px2rem(20);
+          font-size: px2rem(12);
+          border-radius: 50%;
+          background: #bbb;
+          @include center;
+        }
+      }
+      .slide-bookmark-item-text {
+        font-size: px2rem(14);
+        line-height: px2rem(15);
+        max-height: px2rem(45);
+        @include ellipsis2(3);
+      }
+    }
+  }
+}
+
+//ebookLoading
+.ebook-loading {
+  position: relative;
+  margin: 0 auto;
+  z-index: 400;
+  width: px2rem(63);
+  height: px2rem(40);
+  background: transparent;
+  border: px2rem(2) solid #e7e7e7;
+  border-radius: px2rem(3);
+  margin-top: px2rem(300);
+
+  .ebook-loading-wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    .ebook-loading-item {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: px2rem(7) 0;
+      box-sizing: border-box;
+      .ebook-loading-line-wrapper {
+        flex: 1;
+        padding: 0 px2rem(7);
+        box-sizing: border-box;
+        @include left;
+        .ebook-loading-line{
+          flex: 0 0 px2rem(16);
+          width: px2rem(16);
+          height: px2rem(2);
+          background: #e7e7e7;
+        }
+        .ebook-loading-line-0{
+          animation: lineMove 1s infinite
+        }
+        .ebook-loading-line-1 {
+          animation: lineMove 1s 0.3s infinite;
+        }
+        .ebook-loading-line-2 {
+          animation: lineMove 1s 0.6s infinite;
+        }
+        
+        @keyframes lineMove {
+          50% {flex: 0 0 0;}
+        }
+      }
+    }
+    .ebook-loading-center {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: px2rem(2);
+      height: 100%;
+      background: #e7e7e7;
+    }
+  }
+}
+
+//ebookMark
+.ebook-bookmark {
+  position: absolute;
+  top: px2rem(-35);
+  left: 0;
+  z-index: 200;
+  width: 100%;
+  height: px2rem(35);
+  .ebook-bookmark-text-wrapper {
+    position: absolute;
+    right: px2rem(45);
+    bottom: 0;
+    display: flex;
+    .ebook-bookmark-down-wrapper {
+      font-size: px2rem(14);
+      color: white;
+      transition: all .2s linear;
+      @include center;
+    }
+    .ebook-bookmark-text {
+      font-size: px2rem(14);
+      color: white;
+    }
+  }
+  .ebook-bookmark-icon-wrapper {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-right: px2rem(15);
+  }
+}
+
+

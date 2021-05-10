@@ -1,0 +1,130 @@
+/*
+ * @Author: Guifen Shangguan 
+ * @Date: 2021-04-22 21:03:56 
+ * @Last Modified by: Guifen Shangguan
+ * @Last Modified time: 2021-05-07 14:56:46
+ */
+
+$homeAnimationTime: .2s;
+$homeAnimationType: linear;
+$color-blue: rgb(74, 171, 255);
+$color-blue-transparent: rgba(74, 171, 255, .5);
+
+
+
+$ratio: 375 / 10;
+@function px2rem($px) {
+  @return $px / $ratio + rem;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin top {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin bottom {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+@mixin right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin leftBottom {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+
+@mixin ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@mixin ellipsis2($line) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $line;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
+@mixin columnCenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin columnTop {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+@mixin columnLeft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@mixin absCenter {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+@mixin shelfImgHeight {
+  @media screen and (max-width:414px) {
+    height: px2rem(115)
+  }
+  @media screen and (min-width: 415px) and (max-width: 500px) {
+    height: px2rem(115)
+  }
+  @media screen and (min-width: 501px) and (max-width: 600px) {
+    height: px2rem(125)
+  }
+  @media screen and (min-width: 601px) and (max-width: 700px) {
+    height: px2rem(155)
+  }
+  @media screen and (min-width: 701px) and (max-width: 800px) {
+    height: px2rem(155)
+  }
+  @media screen and (min-width: 801px) {
+    height: px2rem(155)
+  }
+}
+
+
+
+
+
+
+

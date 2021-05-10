@@ -1,0 +1,49 @@
+
+@import 'assets/styles/global.scss';
+
+.scroll-wrapper {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;  //解决移动端卡顿问题
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+.bookmark {
+  width: 0;
+  height: 0;
+  border-width: px2rem(50) px2rem(10) px2rem(10) px2rem(10);
+  border-style: solid;
+  border-color: white white transparent white;
+}
+
+.toast-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0 0 0 -50%;
+  z-index: 2500;
+  width: 100%;
+  @include center;
+  .toast-wrapper {
+    width: 60%;
+    line-height: px2rem(20);
+    padding: px2rem(10) px2rem(20);
+    box-sizing: border-box;
+    background: #ccc;
+    border-radius: px2rem(10);
+    font-size: px2rem(14);
+    color: white;
+    .toast {
+      text-align: center;
+      word-break: break-all;
+    }
+  }
+}

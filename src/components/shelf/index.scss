@@ -1,0 +1,191 @@
+/*
+ * @Author: Guifen Shangguan 
+ * @Date: 2021-05-06 09:47:01 
+ * @Last Modified by: Guifen Shangguan
+ * @Last Modified time: 2021-05-07 11:34:40
+ */
+@import '../../assets/styles/global.scss';
+
+// shelfTitle
+.shelf-title-wrapper {
+  position: relative;
+  z-index: 130;
+  width: 100%;
+  height: px2rem(42);
+  background: white;
+  box-shadow: 0 px2rem(2) px2rem(2) 0 rgba(0, 0, 0, .1);
+  &.hide-shadow {
+    box-shadow: none;
+  }
+  .title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    width: 100%;
+    height: px2rem(42);
+    @include columnCenter;
+    .title-text {
+      font-size: px2rem(16);
+      line-height: px2rem(20);
+      font-weight: bold;
+      color: #333;
+    }
+    .sub-title-text {
+      font-size: px2rem(10);
+      color: #333;
+    }
+  }
+  .btn-text-wrapper {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 115;
+    padding-right: px2rem(16.5);
+    box-sizing: border-box;
+    height: 100%;
+    @include center;
+    .btn-text {
+      font-size: px2rem(14);
+      color: #666;
+    }
+  }
+  .btn-clear-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 115;
+    padding-left: px2rem(16.5);
+    box-sizing: border-box;
+    height: 100%;
+    @include center;
+    .btn-clear {
+      font-size: px2rem(14);
+      color: #666;
+    }
+  }
+  .btn-back-wrapper {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 115;
+    padding-left: px2rem(16.5);
+    box-sizing: border-box;
+    height: 100%;
+    font-size: px2rem(20);
+    color: #666;
+    @include center;
+    &:active {
+      color: rgba(102, 102, 102, .5);
+    }
+    .btn-text {
+      font-size: px2rem(14);
+      color: #666;
+    }
+  }
+}
+
+// shelf
+.book-shelf-wrapper {
+  width: 100%;
+  overflow: auto;
+  font-size: 0;
+  .book-shelf-label-list-wrapper {
+    width: 100%;
+    .book-shelf-list-wrapper {
+      position: relative;
+      width: 100%;
+      .book-shelf-label-item {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 120;
+        width: 100%;
+        height: px2rem(42);
+        border-top: px2rem(1) solid #eee;
+        border-bottom: none;
+        box-sizing: border-box;
+        background: white;
+        &.is-fixed {
+          position: fixed;
+          top: px2rem(93);
+          left: 0;
+          border-bottom: px2rem(1) solid #eee;
+        }
+        @include left;
+        .book-shelf-label-text {
+          font-size: px2rem(14);
+          color: #666;
+          margin: 0 px2rem(15);
+        }
+      }
+      .book-shelf-item-wrapper {
+        position: relative;
+        z-index: 110;
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        padding: px2rem(42) px2rem(15) 0 px2rem(15);
+        box-sizing: border-box;
+        .book-shelf-item {
+          flex: 0 0 33.33%;
+          width: 33.33%;
+          padding: px2rem(15);
+          box-sizing: border-box;
+          &.list-move {
+            transition: transform .5s;
+          }
+          &.list-leave-active {
+            display: none;
+          }
+          .book-img-wrapper {
+            width: 100%;
+            @include shelfImgHeight;
+            box-shadow: px2rem(2) px2rem(2) px2rem(6) px2rem(2) rgba(200, 200, 200, .3);
+            @include center;
+            border: px2rem(1) solid #eee;
+            box-sizing: border-box;
+            &.add-book {
+              box-shadow: none;
+              border: px2rem(1) solid #ccc;
+              box-sizing: border-box;
+            }
+            &.category-book {
+              border: px2rem(1) solid #eee;
+              box-sizing: border-box;
+            }
+            .shelf-image {
+              position: relative;
+              width: 100%;
+              height: 100%;
+              .book-img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+              }
+              .checkbox-selected {
+                position: absolute;
+                bottom: px2rem(2);
+                right: px2rem(2);
+                background: rgba(0, 0, 0, .4);
+              }
+            }
+            .icon-add {
+              font-size: px2rem(40);
+              color: #ccc;
+            }
+          }
+          .book-title-wrapper {
+            .book-title {
+              margin-top: px2rem(10);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
