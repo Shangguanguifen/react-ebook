@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 export function home() {
-  return axios.get('json/bookHome.json')
+  return axios.get('json/bookHome.json');
 }
 
 export function detail(book) {
