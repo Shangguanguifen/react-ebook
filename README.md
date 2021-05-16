@@ -11,4 +11,3 @@ react-ebook是一个使用 JavaScript(JS) 开发的简易的移动端电子阅�
 
 ### bookDetai
 
-![Image text](https://github.com/Shangguanguifen/react-ebook/tree/master/public/objectImg/bookDetail.png)
