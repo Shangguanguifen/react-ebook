@@ -7,12 +7,4 @@ react-ebook是一个使用 JavaScript(JS) 开发的简易的移动端电子阅�
 4.路由组件按需加载
 
 
-###展示
-![QQ截图20210516135011](https://user-images.githubusercontent.com/45807229/118387017-45d19700-b64e-11eb-9965-110385962843.png)
-![QQ截图20210516134932](https://user-images.githubusercontent.com/45807229/118387019-45d19700-b64e-11eb-8528-3e420342e9f5.png)
-![QQ截图20210516135027](https://user-images.githubusercontent.com/45807229/118387016-45d19700-b64e-11eb-9029-c3f943c73bd9.png)
-![500CD47BB33640E10433B33FF681BC71](https://user-images.githubusercontent.com/45807229/118387121-f17ae700-b64e-11eb-9182-bd92eec88b44.jpg)
-![2CCB6402D7A5E23349A68CE95955AFFF](https://user-images.githubusercontent.com/45807229/118387122-f475d780-b64e-11eb-89d2-33d7a96da950.jpg)
-
-
 
