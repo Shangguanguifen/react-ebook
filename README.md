@@ -10,4 +10,4 @@ react-ebook是一个使用 JavaScript(JS) 开发的简易的移动端电子阅�
 4.路由组件按需加载
 
 ### bookDetai
-<img src='https://github.com/Shangguanguifen/react-ebook/tree/master/public/objectImg/bookDetail.png'>
+<img src='https://github.com/Shangguanguifen/react-ebook/tree/master/public/objectImg/bookDetail.png' width="200" alt='bookDetail'>
