@@ -2,7 +2,7 @@
  * @Author: Guifen Shangguan 
  * @Date: 2021-05-01 14:51:41 
  * @Last Modified by: Guifen Shangguan
- * @Last Modified time: 2021-05-05 16:07:03
+ * @Last Modified time: 2021-05-12 19:34:06
  */
 import React, { useMemo, useState } from 'react';
 import { withRouter } from "react-router-dom";
@@ -56,7 +56,7 @@ function GuessYouLike(props) {
 
   return (
     <div className="guess-you-like">
-      <Title label={'猜你喜欢'} btn={'换一批'} click={onChange}></Title>
+      <Title label={'猜你喜欢'} btn={'换一批'} handleClick={onChange}></Title>
       <div className="guess-you-like-list">
       {
         showData ? showData.map(item => {
